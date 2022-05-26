@@ -1,0 +1,13 @@
+D:\IKS_Training\MovieCoreApplication\MovieApp.Data\bin\Debug\netcoreapp3.1\MovieApp.Data.deps.json
+D:\IKS_Training\MovieCoreApplication\MovieApp.Data\bin\Debug\netcoreapp3.1\MovieApp.Data.dll
+D:\IKS_Training\MovieCoreApplication\MovieApp.Data\bin\Debug\netcoreapp3.1\MovieApp.Data.pdb
+D:\IKS_Training\MovieCoreApplication\MovieApp.Data\bin\Debug\netcoreapp3.1\MovieApp.Entity.dll
+D:\IKS_Training\MovieCoreApplication\MovieApp.Data\bin\Debug\netcoreapp3.1\MovieApp.Entity.pdb
+D:\IKS_Training\MovieCoreApplication\MovieApp.Data\obj\Debug\netcoreapp3.1\MovieApp.Data.csproj.AssemblyReference.cache
+D:\IKS_Training\MovieCoreApplication\MovieApp.Data\obj\Debug\netcoreapp3.1\MovieApp.Data.GeneratedMSBuildEditorConfig.editorconfig
+D:\IKS_Training\MovieCoreApplication\MovieApp.Data\obj\Debug\netcoreapp3.1\MovieApp.Data.AssemblyInfoInputs.cache
+D:\IKS_Training\MovieCoreApplication\MovieApp.Data\obj\Debug\netcoreapp3.1\MovieApp.Data.AssemblyInfo.cs
+D:\IKS_Training\MovieCoreApplication\MovieApp.Data\obj\Debug\netcoreapp3.1\MovieApp.Data.csproj.CoreCompileInputs.cache
+D:\IKS_Training\MovieCoreApplication\MovieApp.Data\obj\Debug\netcoreapp3.1\MovieApp.Data.csproj.CopyComplete
+D:\IKS_Training\MovieCoreApplication\MovieApp.Data\obj\Debug\netcoreapp3.1\MovieApp.Data.dll
+D:\IKS_Training\MovieCoreApplication\MovieApp.Data\obj\Debug\netcoreapp3.1\MovieApp.Data.pdb
