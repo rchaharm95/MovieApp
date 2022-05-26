@@ -1,0 +1,46 @@
+﻿@model IEnumerable<MovieApp.Entity.UserModel>
+@{
+    ViewData["Title"] = "SelectUsers";
+}
+
+<h1>ShowUserDetails</h1>
+
+<table class="table table-dark table-striped">
+    <thead>
+        <tr>
+            <th>
+                UserId
+            </th>
+            <th>
+                First Name
+            </th>
+            <th>
+                Last Name
+            </th>
+            <th>
+                Email
+            </th>
+            <th>
+                Mobile
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @{
+            foreach(var item in Model)
+            {
+                <tr>
+                    <td>
+                    @item.UserId
+                    </td>
+                    <td>
+                        @item.FirstName
+                    </td>
+                    <td>@item.LastName</td>
+                    <td>@item.Email</td>
+                    <td>@item.Mobile</td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>

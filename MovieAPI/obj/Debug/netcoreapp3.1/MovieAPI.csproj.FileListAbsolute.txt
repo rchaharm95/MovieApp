@@ -6,9 +6,11 @@ D:\IKS_Training\MovieCoreApplication\MovieAPI\bin\Debug\netcoreapp3.1\MovieAPI.r
 D:\IKS_Training\MovieCoreApplication\MovieAPI\bin\Debug\netcoreapp3.1\MovieAPI.runtimeconfig.dev.json
 D:\IKS_Training\MovieCoreApplication\MovieAPI\bin\Debug\netcoreapp3.1\MovieAPI.dll
 D:\IKS_Training\MovieCoreApplication\MovieAPI\bin\Debug\netcoreapp3.1\MovieAPI.pdb
+D:\IKS_Training\MovieCoreApplication\MovieAPI\bin\Debug\netcoreapp3.1\Humanizer.dll
 D:\IKS_Training\MovieCoreApplication\MovieAPI\bin\Debug\netcoreapp3.1\Microsoft.Data.SqlClient.dll
 D:\IKS_Training\MovieCoreApplication\MovieAPI\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.dll
 D:\IKS_Training\MovieCoreApplication\MovieAPI\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Abstractions.dll
+D:\IKS_Training\MovieCoreApplication\MovieAPI\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
 D:\IKS_Training\MovieCoreApplication\MovieAPI\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Relational.dll
 D:\IKS_Training\MovieCoreApplication\MovieAPI\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.SqlServer.dll
 D:\IKS_Training\MovieCoreApplication\MovieAPI\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Abstractions.dll
@@ -71,5 +73,3 @@ D:\IKS_Training\MovieCoreApplication\MovieAPI\obj\Debug\netcoreapp3.1\MovieAPI.c
 D:\IKS_Training\MovieCoreApplication\MovieAPI\obj\Debug\netcoreapp3.1\MovieAPI.dll
 D:\IKS_Training\MovieCoreApplication\MovieAPI\obj\Debug\netcoreapp3.1\MovieAPI.pdb
 D:\IKS_Training\MovieCoreApplication\MovieAPI\obj\Debug\netcoreapp3.1\MovieAPI.genruntimeconfig.cache
-D:\IKS_Training\MovieCoreApplication\MovieAPI\bin\Debug\netcoreapp3.1\Humanizer.dll
-D:\IKS_Training\MovieCoreApplication\MovieAPI\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll

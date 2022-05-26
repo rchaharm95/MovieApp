@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "D2yAd0d35SPYwtlUE4Dal5BH5q1RockXLtY842Cm8dH9+Wn68Gfrr/ML8erIEi99GAu1T2apzn0syHPEOr8v3g==",
+  "dgSpecHash": "rpmFI2M63R47BjD/KDyf+s84QJtV84vxgjz9STr3XDbTcOGxZB2PZfmtcmSKCqjWbhUbmIUcEazvpSakEN11Kw==",
   "success": true,
   "projectFilePath": "D:\\IKS_Training\\MovieCoreApplication\\MovieApp.UI\\MovieApp.UI.csproj",
   "expectedPackageFiles": [
@@ -103,8 +103,7 @@
     "C:\\Users\\rahul\\.nuget\\packages\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
     "C:\\Users\\rahul\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
     "C:\\Users\\rahul\\.nuget\\packages\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512",
-    "C:\\Users\\rahul\\.nuget\\packages\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512",
-    "C:\\Users\\rahul\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.25\\microsoft.netcore.app.host.win-x64.3.1.25.nupkg.sha512"
+    "C:\\Users\\rahul\\.nuget\\packages\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512"
   ],
   "logs": []
 }
