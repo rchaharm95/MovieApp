@@ -1,28 +1,45 @@
-﻿using System;
+﻿using MovieApp.Data.Repositories;
+using MovieApp.Data.Repository;
+using MovieApp.Entity;
+using System;
 using System.Collections.Generic;
 using System.Text;
-using MovieApp.Data.Repositories;
-using MovieApp.Entity;
 
 namespace MovieApp.Business.Services
 {
     public class TheatreService
     {
-        ITheatre theatre;
-        
-        public TheatreService(ITheatre theatre)
+        ITheatre _itheatre;
+
+        public TheatreService(ITheatre itheatre)
         {
-            this.theatre = theatre;
+            _itheatre = itheatre;
         }
 
-        public string AddTheatre(TheatreModel theatreModel)
+
+        public Object SelectTheatre()
         {
-            return theatre.AddTheatre(theatreModel);
+            return _itheatre.SelectTheatre();
         }
 
-        public object SelectTheatre()
+        public string EditTheatre(TheatreModel theatreModel)
         {
-            return theatre.SelectTheatre();
+            return _itheatre.EditTheatre(theatreModel);
+        }
+
+        public object AddTheatre(TheatreModel theatreModel)
+        {
+            return _itheatre.AddTheatre(theatreModel);
+        }
+
+        public string DeleteTheatre(int id)
+        {
+            return _itheatre.DeleteTheatre(id);
+        }
+
+        public object FetchTheatreById(int id)
+        {
+            return _itheatre.FetchTheatreById(id);
         }
     }
 }

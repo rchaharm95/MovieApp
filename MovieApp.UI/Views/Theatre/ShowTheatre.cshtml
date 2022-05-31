@@ -1,0 +1,56 @@
+﻿@model IEnumerable<MovieApp.Entity.TheatreModel>
+@{
+    ViewData["Title"] = "ShowTheatre";
+}
+
+<h1>ShowTheatre</h1>
+
+<table class="table table-dark table-striped">
+    <thead>
+        <tr>
+            <th>
+                Sr. No
+            </th>
+             <th>
+                Theatre Name
+            </th>
+             <th>
+                Theatre Location
+            </th>
+             <th>
+                Theatre Capacity
+            </th>
+            <th>
+                Action-1
+            </th>
+            <th>
+                Action-2
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var item in Model)
+        {
+            <tr>
+                <td>
+                    @item.TheatreId
+                </td>
+                <td>
+                    @item.TheatreName
+                </td>
+                <td>
+                    @item.TheatreLocation
+                </td>
+                <td>
+                    @item.TheatreCapacity
+                </td>
+                <td>
+                    <a asp-controller="Theatre" asp-action="UpdateTheatre" asp-route-TheatreId="@item.TheatreId">Edit Theatre</a>
+                </td>
+                <td>
+                    <a asp-controller="Theatre" asp-action="DeleteTheatre" asp-route-ThetaerId="@item.TheatreId">Edit Theatre</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
