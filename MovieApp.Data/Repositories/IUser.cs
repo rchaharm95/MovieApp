@@ -9,13 +9,13 @@ namespace MovieApp.Data.Repositories
     {
         public string Delete(int id);
 
-        public object Login();
+        public object Login(UserModel userModel);
 
-        public string Register(UserModel userModel);
+        public string RegisterUser(UserModel userModel);
 
         public object SelectUsers();
 
-        public string Update();
-
+        public string Update(UserModel userModel);
+        public object FindUserById(int id);
     }
 }

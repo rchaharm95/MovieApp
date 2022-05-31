@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using MovieApp.Business.Services;
 using MovieApp.Entity;
+using MovieApp.Business.Services;
 
 namespace MovieAPI.Controllers
 {
@@ -35,6 +32,18 @@ namespace MovieAPI.Controllers
         public IActionResult DeleteMovie(int id)
         {
             return Ok(_movieServices.DeleteMovie(id));
+        }
+
+        [HttpPut("EditMovie")]
+        public IActionResult EditMovie(MovieModel movieModel)
+        {
+            return Ok(_movieServices.EditMovie(movieModel));
+        }
+
+        [HttpGet("findmoviebyid")]
+        public IActionResult FindMovieById(int id)
+        {
+            return Ok(_movieServices.FindMovieById(id));
         }
     }
 }

@@ -16,6 +16,8 @@ using MovieApp.Data.Repositories;
 using MovieApp.Data;
 using MovieApp.Data.DataConnection;
 using Microsoft.OpenApi.Models;
+using MovieApp.Data.Repository;
+using MovieApp.Business.Services;
 
 namespace MovieAPI
 {

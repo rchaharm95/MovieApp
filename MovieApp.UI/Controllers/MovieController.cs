@@ -21,15 +21,15 @@ namespace MovieApp.UI.Controllers
 
         public async Task<IActionResult> ShowMovies()
         {
-            using(HttpClient client=new HttpClient())
+            using (HttpClient client = new HttpClient())
             {
                 string endpint = _configuration["WebApiURL"] + "Movie/SelectMovie";
                 using (var response = await client.GetAsync(endpint))
                 {
-                    if(response.StatusCode==System.Net.HttpStatusCode.OK)
+                    if (response.StatusCode == System.Net.HttpStatusCode.OK)
                     {
-                        string data=await response.Content.ReadAsStringAsync();
-                        var movieModel=JsonConvert.DeserializeObject<List<MovieModel>>(data);
+                        string data = await response.Content.ReadAsStringAsync();
+                        var movieModel = JsonConvert.DeserializeObject<List<MovieModel>>(data);
                         return View(movieModel);
                     }
                 }
@@ -48,7 +48,7 @@ namespace MovieApp.UI.Controllers
         {
             StringContent body = new StringContent(JsonConvert.SerializeObject(movieModel), Encoding.UTF8, "application/json");
             string endpoint = _configuration["WebApiURL"] + "Movie/AddMovie";
-            using(HttpClient httpClient = new HttpClient())
+            using (HttpClient httpClient = new HttpClient())
             {
                 using (var response = await httpClient.PostAsync(endpoint, body))
                 {
@@ -65,9 +65,62 @@ namespace MovieApp.UI.Controllers
                 }
                 return View();
             }
-          
+
         }
 
+        [HttpGet]
+        public async Task<IActionResult> updatemovie(int id)
+        {
+            string URL = _configuration["WebApiURL"] + "Movie/findmoviebyid?id=" + id;
+            using (HttpClient client = new HttpClient())
+            {
+                using (var response = await client.GetAsync(URL))
+                {
+                    if (response.StatusCode == System.Net.HttpStatusCode.OK)
+                    {
+                        var data = await response.Content.ReadAsStringAsync();
+                        MovieModel movie = JsonConvert.DeserializeObject<MovieModel>(data);
+                        return View(movie);
+                    }
+                }
+            }
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> updatemovie(MovieModel movieModel)
+        {
+            StringContent body = new StringContent(JsonConvert.SerializeObject(movieModel), Encoding.UTF8, "application/json");
+            var URL = _configuration["WebApiURL"] + "Movie/EditMovie";
+            using (HttpClient client = new HttpClient())
+            {
+                using (var response = await client.PutAsync(URL, body))
+                {
+                    if (response.StatusCode == System.Net.HttpStatusCode.OK)
+                    {
+                        return RedirectToAction("ShowMovies", "Movie");
+                    }
+                }
+            }
+            return RedirectToAction("ShowMovies", "Movie");
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> deleteMovie(int id)
+        {
+            var URL = _configuration["WebApiURL"] + "Movie/DeleteMovie?id=" + id;
+            using (HttpClient client = new HttpClient())
+            {
+                using (var response = await client.DeleteAsync(URL))
+                {
+                    if (response.StatusCode == System.Net.HttpStatusCode.OK)
+                    {
+                        return RedirectToAction("ShowMovies", "Movie");
+                    }
+                }
+            }
+            return RedirectToAction("ShowMovies", "Movie");
+        }
 
     }
 }

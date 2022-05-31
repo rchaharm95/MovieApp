@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Microsoft.EntityFrameworkCore;
 using MovieApp.Data.DataConnection;
 using MovieApp.Entity;
 
@@ -25,12 +26,22 @@ namespace MovieApp.Data.Repositories
             return message;
         }
 
-        public object Login()
+        public object Login(UserModel userModel)
         {
-            throw new NotImplementedException();
+            UserModel validateduser = null;
+            var foundUser = _movieDbContext.userModel.Where(u => u.Email.Equals(userModel.Email) && u.Password.Equals(userModel.Password)).ToList();
+            if (foundUser.Count() > 0)
+            {
+                validateduser = foundUser[0];
+                return validateduser;
+            }
+            else
+            {
+                return "User not Found..!!";
+            }
         }
 
-        public string Register(UserModel userModel)
+        public string RegisterUser(UserModel userModel)
         {
             string msg = "";
             _movieDbContext.userModel.Add(userModel);
@@ -45,9 +56,24 @@ namespace MovieApp.Data.Repositories
             return userList;
         }
 
-        public string Update()
+        public string Update(UserModel userModel)
         {
-            throw new NotImplementedException();
+            _movieDbContext.Entry(userModel).State = EntityState.Modified;
+            _movieDbContext.SaveChanges();
+            return "Data Updated";
+        }
+
+        public object FindUserById(int id)
+        {
+            var foundUser = _movieDbContext.userModel.Find(id);
+            if (foundUser != null)
+            {
+                return foundUser;
+            }
+            else
+            {
+                return "User not Found..!!";
+            }
         }
     }
 }

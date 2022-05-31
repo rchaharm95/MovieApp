@@ -23,6 +23,12 @@
             <th>
                 Mobile
             </th>
+            <th>
+                Action 1
+            </th>
+            <th>
+                Action 2
+            </th>
         </tr>
     </thead>
     <tbody>
@@ -31,7 +37,7 @@
             {
                 <tr>
                     <td>
-                    @item.UserId
+                        @item.UserId
                     </td>
                     <td>
                         @item.FirstName
@@ -39,6 +45,8 @@
                     <td>@item.LastName</td>
                     <td>@item.Email</td>
                     <td>@item.Mobile</td>
+                    <td><a asp-action="EditUser" asp-controller="User" asp-route-UserId="@item.UserId">Edit user</a></td>
+                    <td><a asp-action="DeleteUsers" asp-controller="User" asp-route-UserId="@item.UserId">Delete User</a></td>
                 </tr>
             }
         }

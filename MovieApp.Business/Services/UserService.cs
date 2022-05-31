@@ -14,9 +14,9 @@ namespace MovieApp.Business.Services
             _iuser = iuser;
         }
 
-        public string Register(UserModel userModel)
+        public string RegisterUser(UserModel userModel)
         {
-            return _iuser.Register(userModel);
+            return _iuser.RegisterUser(userModel);
         }
 
         public object SelectUser()
@@ -29,5 +29,21 @@ namespace MovieApp.Business.Services
             return _iuser.Delete(id);
         }
 
+        public object Login(UserModel userModel)
+        {
+            return _iuser.Login(userModel);
+        }
+
+        public object FindUserById(int id)
+        {
+            return _iuser.FindUserById(id);
+        }
+
+        public string EditUser(UserModel userModel)
+        {
+            return _iuser.Update(userModel);
+        }
+
+        
     }
 }

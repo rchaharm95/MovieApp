@@ -1,11 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using MovieApp.Entity;
+﻿using Microsoft.EntityFrameworkCore;
 using MovieApp.Data.DataConnection;
+using MovieApp.Entity;
+using System;
+using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 
-namespace MovieApp.Data.Repositories
+namespace MovieApp.Data.Repository
 {
     public class Movie : IMovie
     {
@@ -18,34 +19,55 @@ namespace MovieApp.Data.Repositories
 
         public string AddMovie(MovieModel movieModel)
         {
-            string msg = "";
+            string message = "";
             _movieDbContext.movieModel.Add(movieModel);
             _movieDbContext.SaveChanges();
-            msg = "movie added successfully";
-            return msg;
-        }
-
-        public string DeleteMovie(int id)
-        {
-            string msg = "";
-            var foundMovie = _movieDbContext.movieModel.Find(id);
-            if(foundMovie == null)
-            {
-                msg = "no movie found with given id";
-            }
-            else
-            {
-                _movieDbContext.movieModel.Remove(foundMovie);
-                _movieDbContext.SaveChanges();
-                msg = "movie deleted sccessfully..";
-            }
-            return msg;
+            message = "Movie Inserted Successfully..!!";
+            return message;
         }
 
         public object SelectMovie()
         {
-            List<MovieModel> list =  _movieDbContext.movieModel.ToList();
-            return list;
+            List<MovieModel> movieList = _movieDbContext.movieModel.ToList();
+            return movieList;
         }
+
+        public string DeleteMovie(int MovieId)
+        {
+            string message = "";
+            var foundMovie = _movieDbContext.movieModel.Find(MovieId);
+            if (foundMovie != null)
+            {
+                _movieDbContext.movieModel.Remove(foundMovie);
+                message = "Movie Deleted Successfully..!!";
+                return message;
+            }
+            else
+            {
+                message = "Movie Not Found!!";
+                return message;
+            }
+        }
+        public string EditMovie(MovieModel movieModel)
+        {
+            _movieDbContext.Entry(movieModel).State = EntityState.Modified;
+            _movieDbContext.SaveChanges();
+            return "Movie Updated Successfully...!!";
+        }
+
+        public object findMovieById(int movieid)
+        {
+            MovieModel foundmovieModel = _movieDbContext.movieModel.Find(movieid);
+            if (foundmovieModel != null)
+            {
+                return foundmovieModel;
+            }
+            else
+            {
+                return "User Not Found";
+            }
+        }
+
     }
+
 }

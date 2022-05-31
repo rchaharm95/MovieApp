@@ -25,10 +25,10 @@ namespace MovieAPI.Controllers
             return Ok(_userServices.SelectUser());
         }
 
-        [HttpPost("Register")]
-        public IActionResult Register(UserModel userModel)
+        [HttpPost("RegisterUser")]
+        public IActionResult RegisterUser(UserModel userModel)
         {
-            return Ok(_userServices.Register(userModel));
+            return Ok(_userServices.RegisterUser(userModel));
         }
 
         [HttpDelete("DeleteUser")]
@@ -36,5 +36,25 @@ namespace MovieAPI.Controllers
         {
             return Ok(_userServices.DeleteUser(id));
         }
+
+        [HttpPost("Login")]
+        public IActionResult Login(UserModel userModel)
+        {
+            return Ok(_userServices.Login(userModel));
+        }
+
+        [HttpGet("FindUserById")]
+        public IActionResult FindUserById(int id)
+        {
+            return Ok(_userServices.FindUserById(id));
+        }
+
+        [HttpPost("EditUser")]
+        public IActionResult EditUser(UserModel userModel)
+        {
+            return Ok(_userServices.EditUser(userModel));
+        }
+
+
     }
 }

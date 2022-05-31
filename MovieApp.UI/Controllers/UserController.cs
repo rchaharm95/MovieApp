@@ -38,7 +38,6 @@ namespace MovieApp.UI.Controllers
             }
             return View();
         }
-        [HttpPost]
         public IActionResult RegisterUser()
         {
             return View();
@@ -51,7 +50,7 @@ namespace MovieApp.UI.Controllers
             {
                 //API URL:http://localhost:18518/api/User/Register
                 StringContent body = new StringContent(JsonConvert.SerializeObject(userModel), Encoding.UTF8, "application/json");
-                string endpoint = configuration["WebApiURL"] + "User/Register";
+                string endpoint = configuration["WebApiURL"] + "User/RegisterUser";
                 using (var response = await client.PostAsync(endpoint, body))
                 {
                     if (response.StatusCode == System.Net.HttpStatusCode.OK)
@@ -62,12 +61,85 @@ namespace MovieApp.UI.Controllers
                     else
                     {
                         ViewBag.status = "Error";
-                        ViewBag.message = "Soory.. Unable To Register..!!";
+                        ViewBag.message = " Unable To Register..!!";
                     }
                 }
                 return View();
             }
         }
+
+        public async Task<IActionResult> EditUser(int userId)
+        {
+            string URL = configuration["WebApiURL"] + "User/FindUserById?Id=" + userId;
+            using (HttpClient client = new HttpClient())
+            {
+                using (var response = await client.GetAsync(URL))
+                {
+                    if (response.StatusCode == System.Net.HttpStatusCode.OK)
+                    {
+                        string result = await response.Content.ReadAsStringAsync();
+                        var userModel = JsonConvert.DeserializeObject<UserModel>(result);
+                        return View(userModel);
+                    }
+                }
+            }
+            return View();
+        }
+
+
+        [HttpPost]
+        public async Task<IActionResult> EditUser(UserModel userModel)
+        {
+            StringContent body = new StringContent(JsonConvert.SerializeObject(userModel), Encoding.UTF8, "application/json");
+            string endpoint = configuration["WebApiURL"] + "User/EditUser";
+            using (HttpClient client = new HttpClient())
+            {
+                using (var response = await client.PutAsync(endpoint, body))
+                {
+                    if (response.StatusCode == System.Net.HttpStatusCode.OK)
+                    {
+                        ViewBag.status = "Success";
+                        ViewBag.message = "User Updated Successfully..!!";
+                    }
+                    else
+                    {
+                        ViewBag.status = "Error";
+                        ViewBag.message = "Soory.. Unable To Register..!!";
+                    }
+                }
+            }
+            return View();
+        }
+
+        [HttpGet]
+        public IActionResult DeleteUsers()
+        {
+
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> DeleteUsers(UserModel userModel)
+        {
+            string endpoint = configuration["WebApiURL"] + "User/DeleteUser?userId=" + userModel.UserId;
+            using (HttpClient httpClient = new HttpClient())
+            {
+                using (var response = await httpClient.DeleteAsync(endpoint))
+                {
+                    if (response.StatusCode == System.Net.HttpStatusCode.OK)
+                    {
+                        return RedirectToAction("ShowUserDetails", "User");
+                    }
+                    else
+                    {
+                        ViewBag.status = "Error";
+                        ViewBag.message = "User Not Deleted";
+                    }
+                }
+            }
+            return View();
+        }
+
     }
 
 

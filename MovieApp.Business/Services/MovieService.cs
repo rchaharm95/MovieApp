@@ -1,14 +1,16 @@
-﻿using System;
+﻿using MovieApp.Data.DataConnection;
+using MovieApp.Entity;
+using MovieApp.Data.Repository;
+using System;
 using System.Collections.Generic;
 using System.Text;
-using MovieApp.Data.Repositories;
-using MovieApp.Entity;
 
 namespace MovieApp.Business.Services
 {
     public class MovieService
     {
         IMovie movie;
+
         public MovieService(IMovie movie)
         {
             this.movie = movie;
@@ -28,5 +30,16 @@ namespace MovieApp.Business.Services
         {
             return movie.DeleteMovie(id);
         }
+
+        public string EditMovie(MovieModel movieModel)
+        {
+            return movie.EditMovie(movieModel);
+        }
+
+        public object FindMovieById(int id)
+        {
+            return movie.findMovieById(id);
+        }
+
     }
 }
