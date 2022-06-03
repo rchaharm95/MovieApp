@@ -28,20 +28,20 @@ namespace MovieAPI.Controllers
             return Ok(_theatreService.AddTheatre(theatreModel));
         }
 
-        [HttpPut("EditThetre")]
-        public IActionResult EditThetre(TheatreModel theatreModel)
+        [HttpPut("EditTheatre")]
+        public IActionResult EditTheatre(TheatreModel theatreModel)
         {
             return Ok(_theatreService.EditTheatre(theatreModel));
         }
 
         [HttpGet("FetchTheatre")]
-        public IActionResult FetchThetreById(int id)
+        public IActionResult FetchTheatreById(int id)
         {
             return Ok(_theatreService.FetchTheatreById(id));
         }
 
-        [HttpDelete("DeleteThetre")]
-        public IActionResult DeleteThetre(int id)
+        [HttpDelete("DeleteTheatre")]
+        public IActionResult DeleteTheatre(int id)
         {
             return Ok(_theatreService.DeleteTheatre(id));
         }

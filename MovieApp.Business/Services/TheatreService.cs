@@ -1,5 +1,4 @@
 ﻿using MovieApp.Data.Repositories;
-using MovieApp.Data.Repository;
 using MovieApp.Entity;
 using System;
 using System.Collections.Generic;

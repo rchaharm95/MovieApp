@@ -22,7 +22,7 @@ namespace MovieApp.UI.Controllers
         {
             using (HttpClient client = new HttpClient())
             {
-                string endpoint = _configuration["WebApiURL"] + "Theatre/selectTheatre";
+                string endpoint = _configuration["WebApiURL"] + "Theatre/SelectTheatre";
 
                 using (var response = await client.GetAsync(endpoint))
                 {
@@ -47,7 +47,7 @@ namespace MovieApp.UI.Controllers
         public async Task<IActionResult> AddTheatre(TheatreModel theatreModel)
         {
             StringContent body = new StringContent(JsonConvert.SerializeObject(theatreModel), Encoding.UTF8, "application/json");
-            string endpoint = _configuration["WebApiURL"] + "Theatre/addTheatre";
+            string endpoint = _configuration["WebApiURL"] + "Theatre/AddTheatre";
             using (HttpClient httpClient = new HttpClient())
             {
                 using (var response = await httpClient.PostAsync(endpoint, body))
@@ -90,7 +90,7 @@ namespace MovieApp.UI.Controllers
         public async Task<IActionResult> UpdateTheatre(TheatreModel theatreModel)
         {
             StringContent body = new StringContent(JsonConvert.SerializeObject(theatreModel), Encoding.UTF8, "application/json");
-            string URL = _configuration["WebApiURL"] + "Thetre/EditThetre";
+            string URL = _configuration["WebApiURL"] + "Theatre/EditTheatre";
             using (HttpClient client = new HttpClient())
             {
                 using (var response = await client.PutAsync(URL, body))
@@ -107,7 +107,7 @@ namespace MovieApp.UI.Controllers
         [HttpPost]
         public async Task<IActionResult> DeleteTheatre(int id)
         {
-            string endpoint = _configuration["WebApiURL"] + "Theatre/DeleteThetre?id=" + id;
+            string endpoint = _configuration["WebApiURL"] + "Theatre/DeleteTheatre?id=" + id;
             using (HttpClient client = new HttpClient())
             {
                 using (var response = await client.DeleteAsync(endpoint))
